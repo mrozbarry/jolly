@@ -27,6 +27,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    ar-octopus (0.0.12)
+      activerecord (>= 3.0.0beta)
     arel (5.0.0)
     builder (3.2.2)
     coffee-rails (4.0.1)
@@ -122,6 +124,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ar-octopus (= 0.0.12)
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.0)
