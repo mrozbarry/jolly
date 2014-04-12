@@ -27,11 +27,16 @@
   </div>
 
   <div class="grid_4">
-    <h2>Addons</h2>
+    <h2>Servers</h2>
 
-<% %w( Wiremod Spacebuild3 SBEP Carter/SG ).each do |i| %>
-    <h3><%= i %></h3>
-    ...
+<% @servers.each do |server| %>
+    <% if server[:status] == "online" %>
+    <h4><%= link_to server[:name], server[:join], :style => "text-decoration: none;" %></a></h4>
+    <% else %>
+    <h4 style="color:red;"><%= server[:name] %></a></h4>
+    <% end %>
+    <%= server[:status].capitalize %> with <%= server[:players] %> players.<br />
+    <%= link_to "Steam Workshop Collection", server[:collection], :target => "_blank" %><br />
 
 <% end %>
   </div>
@@ -39,7 +44,7 @@
   <div class="grid_4">
     <h2>Screen Shots</h2>
 
-<% (1..30).each do |i| %>
+<% (1..10).each do |i| %>
       <img class="screenshot" src="http://placehold.it/64x64" />
 <% end %>
 
