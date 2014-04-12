@@ -78,11 +78,11 @@ nav ol li a:hover                               { color:#269fc3; }
 nav ol li a:hover span                          { width:166px; color:#FFF; transition:all .1s linear 0s; -moz-transition:all .1s linear 0s; -webkit-transition:all .1s linear 0s; -o-transition:all .1s linear 0s; }
 
 nav ol li:first-child,
-/*nav ol li:last-child                            { border:none; }
+nav ol li:last-child                            { border:none; }
 nav ol li:last-child a                          { background-color:#269fc3; color:#FFF; }
 nav ol li:last-child a:hover                    { background-color:#1e7f9c; }
 
-nav ol li.download a                            { font:30px/40px amazium; }*/
+nav ol li.download a                            { font:30px/40px amazium; }
 
 .bokeh                                          { background:#FFF url('../img/bg-01.jpg') no-repeat center 0; background-attachment:fixed; color:#FFF; position:relative; top:0; left:0; z-index:10; }
 
@@ -171,8 +171,8 @@ footer                                          { padding:100px 0 20px; }
 footer a                                        { color:#FFF; }
 footer a.contain:before                         { margin:0 7px 0 0; content:'\e000'; position:relative; top:0; left:0; float:left; font:30px/24px amazium; color:#FFF; }
 
-footer p                                        { font:14px/24px 'economicaregular'; display:inline-block; }
-footer p + p                                    { float:right; }
+footer p                                        { font:14px/24px 'economicaregular', Sans-Serif; display:inline-block; }
+footer a                                        { font:14px/24px 'economicaregular', Sans-Serif; display:inline-block; float: right; margin-left: 5px; }
 
 ul.twitter                                      { list-style: none; margin: 0; padding:0; width: 100%; border: 0; }
 ul.twitter > li.tweet                           { border-bottom: 1px #999 solid; background-color: #fff; display: block; padding: 8px; margin: 0; font-size: 0.9em; }
@@ -224,8 +224,5 @@ nav ol li.download                              { display:none; }
 .containing li:nth-child(odd)                   { margin:0 1% 30px 0; }
 .containing li a                                { color:#FFF; text-decoration:none; display:block; }
 .containing li img                              { margin:0 0 10px; border:5px solid #FFF; width:100%; height:auto; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; }
-
-footer p + p                                    { float:none; display:block; }
-footer p + p:before                             { margin:0 7px 0 0; content:'\e005'; position:relative; top:0; left:0; float:left; font:30px/24px amazium; color:#FFF; }
 
 }
