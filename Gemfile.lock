@@ -27,8 +27,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    ar-octopus (0.0.12)
-      activerecord (>= 3.0.0beta)
+    ar-octopus (0.8.1)
+      activerecord (>= 3.2.0)
+      activesupport (>= 3.2.0)
     arel (5.0.0)
     builder (3.2.2)
     coffee-rails (4.0.1)
@@ -89,7 +90,6 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
-    spring (1.1.2)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -124,13 +124,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ar-octopus (= 0.0.12)
+  ar-octopus
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
-  spring
   sqlite3
   steam-condenser
   therubyracer

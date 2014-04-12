@@ -6,8 +6,10 @@ gem 'rails', '4.1.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-# Also use octopus, because we'll need a few DBs
-gem 'ar-octopus', '0.0.12', :require => 'octopus'
+
+# Also use multidb, because we'll need a few DBs
+#gem 'ar-octopus', '0.0.12', :require => 'octopus'
+gem 'ar-multidb', :require => 'multidb'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -28,7 +30,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+#gem 'spring',        group: :development
 
 gem 'steam-condenser'
 
