@@ -1,2 +1,41 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
+
+<section class="row-max">
+  <div class="grid_12 title-row">
+    <h1>Jolly and Friends</h1>
+    <p>Spacebuild3 and DarkRP</p>
+  </div>
+</section>
+
+<section class="row">
+  <div class="grid_4">
+    <h2>New Feed</h2>
+    <ul class="twitter">
+<% (1...5).each do |i| %>
+      <li class="tweet">
+        <img src="http://placehold.it/64x64" width="64" height="auto" class="user" />
+
+        <div class="title">
+          <span class="text">Jolly and Friends</span>
+          <a class="source" href="#">@JollyAndFriends</a>
+          <span class="time">1h</span>
+        </div>
+
+        <p class="text">Some update about the server <a href="#">#gmod</a></p>
+      </li>
+<% end %>
+    </ul>
+  </div>
+
+  <div class="grid_4">
+    <h2>Addons</h2>
+
+<% (1...3).each do |i| %>
+    <h3>Addon #<%= i %></h3>
+
+<% end %>
+  </div>
+
+  <div class="grid_4">
+    <h2>Screen Shots</h2>
+  </div>
+</section>

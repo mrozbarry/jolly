@@ -6,13 +6,21 @@ gem 'rails', '4.1.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+# Also use mysql
+gem 'mysql'
 
 # Also use multidb, because we'll need a few DBs
 #gem 'ar-octopus', '0.0.12', :require => 'octopus'
 gem 'ar-multidb', :require => 'multidb'
 
+# Scheduler
+gem 'whenever', :require => false
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+
+# Normalize that shit
+gem 'normalize-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -22,6 +30,9 @@ gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# And jquery ui
+gem 'jquery-ui-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
