@@ -1,6 +1,6 @@
 
 <section class="row-max">
-  <div class="grid_12 title-row">
+  <div class="grid_12 title-row" style="background-image: url(<%= asset_path( "screenshots/" + File.basename( @images[0] ) ) %>);">
     <h1>Jolly and Friends</h1>
     <p>Spacebuild3 and DarkRP</p>
   </div>
@@ -8,10 +8,7 @@
 
 <section class="row">
   <div class="grid_12">
-    <div style="overflow-x:hidden;white-space:nowrap;">
-<% (1..40).each do |i| %>
-      <img class="screenshot" src="http://placehold.it/64x64" />
-<% end %>
+    <div style="overflow-x:hidden;white-space:nowrap;" id="screenshots">
     </div>
   </div>
 </section>
@@ -53,3 +50,21 @@
   </div>
 
 </section>
+
+<% content_for :scripts do %>
+<script type="text/javascript">
+<!--
+
+<% @images.each do |image| %>
+  (function(){
+    var img = new Image();
+    img.src = '<%= asset_path( "screenshots/" + File.basename( image ) ) %>';
+    img.onload = function() {
+      $("#screenshots").append( $("<img>").attr({src: this.src, alt: this.src}) );
+    }
+  })();
+<% end %>
+
+//-->
+</script>
+<% end %>
