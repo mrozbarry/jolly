@@ -40,10 +40,14 @@
     <% status = server.gmod_server_statuses.last[:reachable] %>
     <% if status == true %>
     <h4 title="Click to Join!"><%= link_to server[:name], "steam://connect/#{server.ip}:#{server.port}", :style => "text-decoration: none;" %></a></h4>
-    <span style="color:green" title="Last checked <%= time_ago_in_words( server.last_checked ) %>">Online</span> with <%= server.gmod_server_statuses.last[:player_count] %> players.<br />
+    <div class="server_status" data-checked="Last checked <%= time_ago_in_words( server.last_checked ) %>">
+      <span style="color:green">Online</span> with <%= server.gmod_server_statuses.last[:player_count] %> players.<br />
+    </div>
     <% else %>
     <h4><%= server[:name] %></a></h4>
-    <span style="color:red" title="Last checked <%= time_ago_in_words( server.last_checked ) %>">Offline</span> since <%= server.last_online %>
+    <div class="server_status" data-checked="Last checked <%= time_ago_in_words( server.last_checked ) %>">
+      <span style="color:red">Offline</span> since <%= server.last_online %>
+    </div>
     <% end %>
 
 <% end %>
@@ -54,13 +58,22 @@
 <% content_for :scripts do %>
 <script type="text/javascript">
 <!--
-
+  var firstLoaded = false;
 <% @images.each do |image| %>
   (function(){
     var img = new Image();
     img.src = '<%= asset_path( "screenshots/" + File.basename( image ) ) %>';
     img.onload = function() {
-      $("#screenshots").append( $("<img>").attr({src: this.src, alt: this.src}) );
+      $("#screenshots").append(
+        $("<img>").attr({src: this.src, alt: this.src}).addClass("screenshot").click(function(e){
+          $("img.screenshot.selected:first").removeClass("selected");
+          $(this).addClass("selected");
+          $(".title-row:first").css({
+            backgroundImage: "url(" + $(this).attr("src") + ")"
+          });
+        })
+      );
+      if ( !firstLoaded ) { $("img.screenshot:first").click(); firstLoaded = true; }
     }
   })();
 <% end %>

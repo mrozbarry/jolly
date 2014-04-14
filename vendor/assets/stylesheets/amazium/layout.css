@@ -29,7 +29,8 @@ header + .content                               { top:90px; }
 
 .title-row                                      { background-image: url(http://placehold.it/320x200); transition: background-image 1s ease-in-out; background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; min-height: 900px; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; font-weight: bold; }
 .title-row > p                                  { font-size: 1.2em; }
-#screenshots > img                              { height:64px; width: auto; margin: 0 1px; border: 1px transparent solid; }
+
+.server_status:hover::after                     { content: attr(data-checked); font-size: 0.8em; }
 
 .logo                                           { font:59px/40px amazium; color:#FFF; text-shadow:0px 4px 4px #000; filter:dropshadow(color=#000, offx=0, offy=4); }
 a.logo                                          { color:#FFF; text-decoration:none; }
@@ -143,7 +144,8 @@ ul.twitter > li.tweet > img.user                { float: left; width: 64px; heig
 ul.twitter > li.tweet > p.text                  { display: block; margin-left: 5px; }
 ul.twitter > li.tweet a                         { color: #5995AB; text-decoration: underline; }
 
-img.screenshot                                  { width: 64px; height: 64px; border: 1px white solid; padding: 2px; display: inline; margin: 2px; }
+img.screenshot                                  { height: 64px; width: auto; border: 1px transparent solid; display: inline; margin: 1px; cursor: pointer; }
+img.screenshot.selected                         { border-color: #999; }
 
 /***** Screen Smaller than 1199px *****/
 @media only screen and (min-width: 960px) and (max-width: 1199px) {
