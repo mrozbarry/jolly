@@ -13,11 +13,6 @@
 
   <meta name="vewiport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -31,9 +26,13 @@
         <li class="show-mobile"><a href="#index">Jolly and Friends</a></li>
         <li><a href="#servers">Servers</a></li>
         <li><a href="#rules">Rules</a></li>
-        <li><a href="#soon">Coming Soon</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#signup">Sign Up!</a></li>
+        <li><a href="#development">Development</a></li>
+        <% if @user.nil? %>
+        <li><a href="#signup" class="login">Log In</a></li>
+        <% else %>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#signup" class="logout">Log Out</a></li>
+        <% end %>
       </ol>
     </nav>
   </div>
@@ -44,7 +43,8 @@
 <footer>
   <section class="row">
     <article class="grid_6">
-      <p><a href="https://github.com/MikeBallan/Amazium" target="_blank" class="contain">This site may contain traces of Amazium</a></p>
+      <a href="https://github.com/MikeBallan/Amazium" style="float: none; margin: 0;" target="_blank">This site may contain traces of Amazium</a><br />
+      Designed by <a href="http://mrbarry.com" style="float: none; margin: 0;">MrBarry</a> &copy; 2014
     </article>
     <article class="grid_6">
       <a href="#contact">Contact</a>
@@ -53,6 +53,11 @@
     </article>
   </section>
 </footer>
+
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 </body>
 </html>

@@ -46,8 +46,10 @@ nav ol li a:hover span                          { width:166px; color:#FFF; trans
 
 nav ol li:first-child,
 nav ol li:last-child                            { border:none; }
-nav ol li:last-child a                          { background-color:#269fc3; color:#FFF; }
-nav ol li:last-child a:hover                    { background-color:#1e7f9c; }
+nav ol li:last-child a.login                    { background-color:#269fc3; color:#FFF; }
+nav ol li:last-child a.login:hover              { background-color:#1e7f9c; }
+nav ol li:last-child a.logout                   { background-color:#ff1f43; color:#FFF; }
+nav ol li:last-child a.logout:hover             { background-color:#aa0f2c; }
 
 /*.welcome                                        { margin:-70px 0 0 -250px; position:fixed; top:50%; left:50%; height:115px; z-index:20; }
 .welcome:before                                 { content:'\e000'; position:relative; top:87px; left:-70px; float:left; font:220px/0 amazium; color:#FFF; text-shadow:0px 4px 4px #000; filter:dropshadow(color=#000, offx=0, offy=4); }
@@ -139,7 +141,7 @@ ul.twitter > li.tweet > img.user                { float: left; width: 64px; heig
 ul.twitter > li.tweet > p.text                  { display: block; margin-left: 5px; }
 ul.twitter > li.tweet a                         { color: #5995AB; text-decoration: underline; }
 
-img.screenshot                                  { width: 64px; height: 64px; border: 1px #999 solid; padding: 2px; float: left; margin: 2px; }
+img.screenshot                                  { width: 64px; height: 64px; border: 1px white solid; padding: 2px; float: left; margin: 2px; }
 
 /***** Screen Smaller than 1199px *****/
 @media only screen and (min-width: 960px) and (max-width: 1199px) {

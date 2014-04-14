@@ -21,6 +21,12 @@
 
 every 5.minutes do
 
-  # Poll servers
+  rake "jolly:update_server_status"
+
+end
+
+event 1.month do
+
+  rake "jolly:update_server_list"
 
 end

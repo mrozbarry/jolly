@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'tasks/servers'
+
   get 'main/index'
 
   get 'main/motd'
