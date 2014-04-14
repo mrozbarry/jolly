@@ -7,6 +7,16 @@
 </section>
 
 <section class="row">
+  <div class="grid_12">
+    <div style="overflow-x:hidden;white-space:nowrap;">
+<% (1..40).each do |i| %>
+      <img class="screenshot" src="http://placehold.it/64x64" />
+<% end %>
+    </div>
+  </div>
+</section>
+
+<section class="row">
   <div class="grid_4">
     <h2>New Feed</h2>
     <ul class="twitter">
@@ -26,27 +36,20 @@
     </ul>
   </div>
 
-  <div class="grid_4">
+  <div class="grid_8">
     <h2>Servers</h2>
 
 <% @servers.each do |server| %>
-    <% if server[:status] == "online" %>
-    <h4><%= link_to server[:name], server[:join], :style => "text-decoration: none;" %></a></h4>
+    <% status = server.gmod_server_statuses.last[:reachable] %>
+    <% if status == true %>
+    <h4 title="Click to Join!"><%= link_to server[:name], "steam://connect/#{server.ip}:#{server.port}", :style => "text-decoration: none;" %></a></h4>
+    <span style="color:green" title="Last checked <%= time_ago_in_words( server.last_checked ) %>">Online</span> with <%= server.gmod_server_statuses.last[:player_count] %> players.<br />
     <% else %>
-    <h4 style="color:red;"><%= server[:name] %></a></h4>
+    <h4><%= server[:name] %></a></h4>
+    <span style="color:red" title="Last checked <%= time_ago_in_words( server.last_checked ) %>">Offline</span> since <%= server.last_online %>
     <% end %>
-    <%= server[:status].capitalize %> with <%= server[:players] %> players.<br />
-    <%= link_to "Steam Workshop Collection", server[:collection], :target => "_blank" %><br />
 
 <% end %>
   </div>
 
-  <div class="grid_4">
-    <h2>Screen Shots</h2>
-
-<% (1..10).each do |i| %>
-      <img class="screenshot" src="http://placehold.it/64x64" />
-<% end %>
-
-  </div>
 </section>

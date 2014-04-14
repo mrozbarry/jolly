@@ -1,7 +1,7 @@
 class MainController < ApplicationController
   def index
 
-    @servers = GmodServers.all
+    @servers = GmodServer.all
 
   end
 

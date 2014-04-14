@@ -141,7 +141,7 @@ ul.twitter > li.tweet > img.user                { float: left; width: 64px; heig
 ul.twitter > li.tweet > p.text                  { display: block; margin-left: 5px; }
 ul.twitter > li.tweet a                         { color: #5995AB; text-decoration: underline; }
 
-img.screenshot                                  { width: 64px; height: 64px; border: 1px white solid; padding: 2px; float: left; margin: 2px; }
+img.screenshot                                  { width: 64px; height: 64px; border: 1px white solid; padding: 2px; display: inline; margin: 2px; }
 
 /***** Screen Smaller than 1199px *****/
 @media only screen and (min-width: 960px) and (max-width: 1199px) {
