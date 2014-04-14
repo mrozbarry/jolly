@@ -25,7 +25,7 @@ every 5.minutes do
 
 end
 
-event 1.month do
+every 1.month do
 
   rake "jolly:update_server_list"
 
