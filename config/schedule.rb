@@ -5,7 +5,6 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -18,6 +17,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+set :output, "log/whenever.log"
 
 every 5.minutes do
 
