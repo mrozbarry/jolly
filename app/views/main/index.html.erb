@@ -71,6 +71,7 @@
           $(".title-row:first").css({
             backgroundImage: "url(" + $(this).attr("src") + ")"
           });
+          screenshotIntervalReset();
         })
       );
       if ( !firstLoaded ) { $("img.screenshot:first").click(); firstLoaded = true; }
