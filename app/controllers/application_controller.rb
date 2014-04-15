@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
     session[:page_history].pop if !session[:page_history].nil? && session[:page_history].count
   end
 
+  def last_page_url
+    session[:page_history].last || "/"
+  end
+
 end

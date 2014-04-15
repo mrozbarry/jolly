@@ -10,4 +10,18 @@ class GmodServer < ActiveRecord::Base
   def last_checked
     self.gmod_server_statuses.last[:created_at]
   end
+
+  def steam_url
+    "steam://connect/#{self.ip}:#{self.port}"
+  end
+
+  def last_24_hour_statuses
+    statuses = gmod_server_statuses.order("id DESC")
+    c = 12
+    result = (0...24).map do |i|
+      statuses[i * 5] || GmodServerStatus.new( :reachable => false, :player_count => 0, :player_hash => "" )
+    end
+
+    return result.reverse
+  end
 end

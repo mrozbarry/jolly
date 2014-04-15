@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
+  <meta charset="utf-8" />
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
   <title>Jolly and Friends</title>
   
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -10,6 +12,7 @@
   <%= stylesheet_link_tag 'amazium/base', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'amazium/form', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'amazium/layout', media: 'all', 'data-turbolinks-track' => true %>
+  <%= yield :styles %>
 
   <meta name="vewiport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   
@@ -20,11 +23,11 @@
 <header>
   <div class="row">
     <nav class="grid_12">
-      <a href="#home" class="logo"><%= image_tag "garrysmod.logo.medium.svg.png", :width => 64, :height => 64 %></a>
+      <a href="/" class="logo"><%= image_tag "garrysmod.logo.medium.svg.png", :width => 64, :height => 64 %></a>
       <a href="#" class="mobile-nav show-mobile">&#xe003;</a>
       <ol class="navigation">
         <li class="show-mobile"><a href="#index">Jolly and Friends</a></li>
-        <li><a href="#servers">Servers</a></li>
+        <li><a href="/servers">Servers</a></li>
         <li><a href="#rules">Rules</a></li>
         <li><a href="#development">Development</a></li>
         <% if @user.nil? %>
@@ -48,8 +51,8 @@
     </article>
     <article class="grid_6">
       <a href="#contact">Contact</a>
-      <a href="#servers">Servers</a>
-      <a href="#home">Home</a>
+      <a href="/servers">Servers</a>
+      <a href="/">Home</a>
     </article>
   </section>
 </footer>

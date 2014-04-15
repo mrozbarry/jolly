@@ -1,0 +1,53 @@
+
+<section class="row">
+  <div class="grid_12">
+    <h1>Jolly and Friends Server List</h1>
+  </div>
+</section>
+
+<% @servers.each do |server| %>
+
+<section class="row">
+  <div class="grid_10">
+    <h3 style="margin-top:0;"><%= server[:name] %></h3>
+    
+    <table class="viz" data-graph-container-before="1", data-graph-type="column">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Players</th>
+        <th>Ping</th>
+
+        <!--<% (0..23).to_a.reverse.each do |i| %>
+        <th scope="col"><%= time_ago_in_words( i.to_i.hours.ago ) %></th>
+        <% end %>-->
+
+        <!--
+        <th scope="col">Players</th>
+        <th scope="col">Ping</th>
+        -->
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <% server.last_24_hour_statuses.each_with_index do |status,i| %>
+      <tr>
+        <td><%= i == 23 ? "Now" : "#{23 - i} hours ago" %></td>
+        <td><%= status[:player_count] %></td>
+        <td>0</td>
+      </tr>
+      <% end %>
+
+    </tbody>
+
+    </table>
+
+  </div>
+  <div class="grid_2">
+    <a class="btn" style="display: block;" href="/servers/<%= server.id %>/join">Join Server</a>
+    <a class="btn" style="display: block;" href="/servers/<%= server.id %>">Server Details</a>
+  </div>
+</section>
+
+<% end %>

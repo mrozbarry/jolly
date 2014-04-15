@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  get 'servers' => "gmod_servers#index"
+  get 'servers/:id' => "gmod_servers#show"
+  get 'servers/:id/join' => "gmod_servers#join"
+
   get 'tasks/servers'
 
   get 'main/index'

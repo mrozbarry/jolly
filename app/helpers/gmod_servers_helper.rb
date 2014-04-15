@@ -1,0 +1,2 @@
+module GmodServersHelper
+end

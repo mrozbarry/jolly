@@ -39,9 +39,9 @@
 <% @servers.each do |server| %>
     <% status = server.gmod_server_statuses.last[:reachable] %>
     <% if status == true %>
-    <h4 title="Click to Join!"><%= link_to server[:name], "steam://connect/#{server.ip}:#{server.port}", :style => "text-decoration: none;" %></a></h4>
+    <h4 title="Click to Join!"><%= link_to server[:name], "/servers/#{server.id}/join" %></a></h4>
     <div class="server_status" data-checked="Last checked <%= time_ago_in_words( server.last_checked ) %>">
-      <span style="color:green">Online</span> with <%= server.gmod_server_statuses.last[:player_count] %> players.<br />
+      <span style="color:green">Online</span> with <%= server.gmod_server_statuses.last[:player_count] %> players.
     </div>
     <% else %>
     <h4><%= server[:name] %></a></h4>
@@ -49,6 +49,10 @@
       <span style="color:red">Offline</span> since <%= server.last_online %>
     </div>
     <% end %>
+    <br />
+    <div style="font-size: 0.9em;margin-top: 5px;">
+      <% if status %><a href="/servers/<%= server.id %>/join" class="btn">Join Server</a><% end %><a href="/servers/<%= server.id %>" class="btn">Details</a>
+    </div>
 
 <% end %>
   </div>

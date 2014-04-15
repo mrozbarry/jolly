@@ -30,6 +30,8 @@ header + .content                               { top:90px; }
 .title-row                                      { background-image: url(http://placehold.it/320x200); transition: background-image 1s ease-in-out; background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; min-height: 900px; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; font-weight: bold; }
 .title-row > p                                  { font-size: 1.2em; }
 
+h4 > a                                          { text-decoration: none; }
+.server_status                                  { display: inline; }
 .server_status:hover::after                     { content: attr(data-checked); font-size: 0.8em; }
 
 .logo                                           { font:59px/40px amazium; color:#FFF; text-shadow:0px 4px 4px #000; filter:dropshadow(color=#000, offx=0, offy=4); }
@@ -134,6 +136,7 @@ footer p                                        { font:14px/24px Sans-Serif; dis
 footer a                                        { font:14px/24px Sans-Serif; display:inline-block; float: right; margin-left: 5px; }
 
 ul.twitter                                      { list-style: none; margin: 0; padding:0; width: 100%; border: 0; }
+ul.twitter a                                    { text-decoration: none !important; }
 ul.twitter > li.tweet                           { border-bottom: 1px #999 solid; background-color: #fff; display: block; padding: 8px; margin: 0; font-size: 0.9em; }
 ul.twitter:first-child                          { border-top: 1px #999 solid; }
 ul.twitter > li.tweet > div.title               { display: block; margin-left: 5px; }
@@ -141,7 +144,7 @@ ul.twitter > li.tweet > div.title > .text       { display: inline-block; font-we
 ul.twitter > li.tweet > div.title > a.source    { display: inline-block; font-weight: normal; margin-left: 5px; color: #8899A6; text-decoration: none; }
 ul.twitter > li.tweet > div.title > .time       { display: inline-block; font-weight: normal; margin-left: 5px; color: #8899A6; }
 ul.twitter > li.tweet > img.user                { float: left; width: 64px; height: 64px; margin-right: 10px; }
-ul.twitter > li.tweet > p.text                  { display: block; margin-left: 5px; }
+ul.twitter > li.tweet > .text                   { display: inline-block; margin-left: 5px; }
 ul.twitter > li.tweet a                         { color: #5995AB; text-decoration: underline; }
 
 img.screenshot                                  { height: 64px; width: auto; border: 1px transparent solid; display: inline; margin: 1px; cursor: pointer; }

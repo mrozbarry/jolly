@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
+//= require highcharts
+//= require highcharts.gray
+//= require jquery.highchartTable
 //= require turbolinks
 //= require amazium/amazium
 //= require_tree .

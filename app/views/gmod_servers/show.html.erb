@@ -1,0 +1,81 @@
+
+<section class="row">
+  <div class="grid_12">
+    <h1>Server Details</h1>
+    <h2><%= @server[:name] %></h2>
+  </div>
+</section>
+
+<section class="row">
+  <div class="grid_11">
+    <h2>Current Players</h2>
+    <table>
+    <thead>
+      <tr>
+        <th>
+          User Name
+        </th>
+        <th>
+          Time on the Server
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @statistics.players.each do |key, data| %>
+      <% if !key.empty? %>
+      <% hours = ( (data["connect_time"] / 60 / 60) + 0.5 ).floor %>
+      <tr>
+        <td><%= key %></td>
+        <td><%= hours < 1 ? "Less than an hour" : "About #{hours} hours" %></td>
+        <td>
+          <i>User has not registered</i>
+        </td>
+      </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+    </table>
+  </div>
+  <div class="grid_1">
+  </div>
+</section>
+
+<section class="row">
+  <div class="grid_10">
+    <h2>Server Statistics</h2>
+
+    <table class="viz" data-graph-container-before="1", data-graph-type="column">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Players</th>
+        <th>Ping</th>
+
+        <!--<% (0..23).to_a.reverse.each do |i| %>
+        <th scope="col"><%= time_ago_in_words( i.to_i.hours.ago ) %></th>
+        <% end %>-->
+
+        <!--
+        <th scope="col">Players</th>
+        <th scope="col">Ping</th>
+        -->
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <% @server.last_24_hour_statuses.each_with_index do |status,i| %>
+      <tr>
+        <td><%= i == 23 ? "Now" : "#{23 - i} hours ago" %></td>
+        <td><%= status[:player_count] %></td>
+        <td>0</td>
+      </tr>
+      <% end %>
+
+    </tbody>
+
+    </table>
+  </div>
+</section>
