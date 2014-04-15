@@ -12,25 +12,34 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
-//= require highcharts
+//= require jquery.ui.core
+//= require highcharts.source
 //= require highcharts.gray
-//= require jquery.highchartTable
+//= require modules/exporting
+//= require modules/data
 //= require turbolinks
 //= require amazium/amazium
 //= require_tree .
 
-$(document).ready(function(){
-  $('.mobile-nav').click(function(){
-      $('.navigation').slideToggle('slow');
-  });
-  $(window).resize(function(){
-    var currentWidth = $(window).width();
-    if (currentWidth >= 768) {
-        $('.navigation').show();
-        $('.navigation').css("display","");
-    } else {
-      if( $('.navigation').css("display") == 'none' ) $('.navigation').hide();
-    }
-  });
-});
+(function(){
+  function ready()
+  {
+    console.log( "application.js page:load" );
+    $('.mobile-nav').click(function(){
+        $('.navigation').slideToggle('slow');
+    });
+    $(window).resize(function(){
+      var currentWidth = $(window).width();
+      if (currentWidth >= 768) {
+          $('.navigation').show();
+          $('.navigation').css("display","");
+      } else {
+        if( $('.navigation').css("display") == 'none' ) $('.navigation').hide();
+      }
+    });
+  }
+
+  $(document).ready(ready);
+  $(document).on("page:load", ready);
+})()
+

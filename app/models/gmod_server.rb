@@ -19,9 +19,25 @@ class GmodServer < ActiveRecord::Base
     statuses = gmod_server_statuses.order("id DESC")
     c = 12
     result = (0...24).map do |i|
-      statuses[i * 5] || GmodServerStatus.new( :reachable => false, :player_count => 0, :player_hash => "" )
+      statuses[i * 5] || GmodServerStatus.new( :reachable => false, :player_count => 0, :player_hash => "", :ping => 0 )
     end
 
     return result.reverse
+  end
+
+  def last_24_hour_playercounts
+    counts = []
+    last_24_hour_statuses.each do |stat|
+      counts << stat[:player_count]
+    end
+    counts
+  end
+
+  def last_24_hour_pings
+    pings = []
+    last_24_hour_statuses.each do |stat|
+      pings << stat[:ping]
+    end
+    pings
   end
 end

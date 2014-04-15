@@ -17,6 +17,12 @@
   <meta name="vewiport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   
   <%= csrf_meta_tags %>
+  
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 </head>
 <body>
 
@@ -47,7 +53,7 @@
   <section class="row">
     <article class="grid_6">
       <a href="https://github.com/MikeBallan/Amazium" style="float: none; margin: 0;" target="_blank">This site may contain traces of Amazium</a><br />
-      Developed by <a href="http://mrbarry.com" style="float: none; margin: 0;">MrBarry</a> &copy; 2014
+      Developed by <a href="http://mrbarry.com" style="float: none; margin: 0;">MrBarry</a> &copy; <%= Time.now.year %>
     </article>
     <article class="grid_6">
       <a href="#contact">Contact</a>
@@ -56,11 +62,6 @@
     </article>
   </section>
 </footer>
-
-  <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
   <%= yield :scripts %>
 

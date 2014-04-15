@@ -14,10 +14,10 @@
     <a class="btn" href="/servers/<%= server.id %>/join">Join Server</a>
     <a class="btn" href="/servers/<%= server.id %>">Server Details</a>
 
-    <table class="viz" data-graph-container-before="1", data-graph-type="column">
+    <table class="viz" data-id="<%= server.id %>">
     <thead>
       <tr>
-        <th>Time</th>
+        <th></th>
         <th>Players</th>
         <th>Ping</th>
       </tr>
@@ -27,9 +27,9 @@
 
       <% server.last_24_hour_statuses.each_with_index do |status,i| %>
       <tr>
-        <td><%= i == 23 ? "Now" : "#{23 - i} hours ago" %></td>
-        <td><%= status[:player_count] %></td>
-        <td>0</td>
+        <th><%= i == 23 ? "Now" : "#{23 - i} hours ago" %></th>
+        <td><%= status[:player_count] || 0 %></td>
+        <td><%= status[:ping] || 0 %></td>
       </tr>
       <% end %>
 
