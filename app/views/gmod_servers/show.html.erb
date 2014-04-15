@@ -44,21 +44,12 @@
   <div class="grid_12">
     <h2>Server Statistics</h2>
 
-    <table class="viz" data-graph-container-before="1", data-graph-type="column">
+    <table class="viz" data-id="<%= @server.id %>">
     <thead>
       <tr>
         <th>Time</th>
         <th>Players</th>
         <th>Ping</th>
-
-        <!--<% (0..23).to_a.reverse.each do |i| %>
-        <th scope="col"><%= time_ago_in_words( i.to_i.hours.ago ) %></th>
-        <% end %>-->
-
-        <!--
-        <th scope="col">Players</th>
-        <th scope="col">Ping</th>
-        -->
       </tr>
     </thead>
 
