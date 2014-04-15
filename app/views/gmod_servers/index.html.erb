@@ -8,9 +8,12 @@
 <% @servers.each do |server| %>
 
 <section class="row">
-  <div class="grid_10">
+  <div class="grid_12">
     <h3 style="margin-top:0;"><%= server[:name] %></h3>
     
+    <a class="btn" href="/servers/<%= server.id %>/join">Join Server</a>
+    <a class="btn" href="/servers/<%= server.id %>">Server Details</a>
+
     <table class="viz" data-graph-container-before="1", data-graph-type="column">
     <thead>
       <tr>
@@ -43,10 +46,6 @@
 
     </table>
 
-  </div>
-  <div class="grid_2">
-    <a class="btn" style="display: block;" href="/servers/<%= server.id %>/join">Join Server</a>
-    <a class="btn" style="display: block;" href="/servers/<%= server.id %>">Server Details</a>
   </div>
 </section>
 
