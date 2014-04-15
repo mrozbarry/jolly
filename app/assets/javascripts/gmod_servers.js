@@ -4,21 +4,18 @@
 (function(){
   function ready()
   {
-    console.log( "gmod_servers.js > page:load" );
     $('table.viz').each(function(index){
       var id = $(this).attr("data-id");
       var table = $(this)[0];
       var chartWidth = $(this).css("width");
       $(this).hide();
-      console.log( "Requesting: /servers/" + id + ".json" )
       $.ajax({
         dataType: "json",
         url: "/servers/" + id + ".json",
         success: function( data ) {
+          var categories = data.categories;
           var series1 = data.playercounts;
           var series2 = data.pings;
-
-          console.log( data, series1, series2 );
 
           var container = document.createElement( "div" );
           $(container).css({
@@ -28,6 +25,9 @@
           }).highcharts({
             chart: { zoomType: 'xy', type: 'column' },
             //data: { table: dataTable },
+            xAxis: [{
+              categories: categories
+            }],
             yAxis: [{
               allowDecimals: false,
               title: {
