@@ -7,7 +7,7 @@
 
 <% @servers.each do |server| %>
 
-<section class="row">
+<section class="row" class="margin-top: 10px;">
   <div class="grid_12">
     <h3 style="margin-top:0;"><%= server[:name] %></h3>
     
@@ -20,15 +20,6 @@
         <th>Time</th>
         <th>Players</th>
         <th>Ping</th>
-
-        <!--<% (0..23).to_a.reverse.each do |i| %>
-        <th scope="col"><%= time_ago_in_words( i.to_i.hours.ago ) %></th>
-        <% end %>-->
-
-        <!--
-        <th scope="col">Players</th>
-        <th scope="col">Ping</th>
-        -->
       </tr>
     </thead>
 

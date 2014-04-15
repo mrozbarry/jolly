@@ -28,12 +28,12 @@ namespace :jolly do
       begin
         instance = SourceServer.new server[:ip], server[:port]
         players = instance.players
-        status = GmodServerStatus.create! :gmod_server_id => server[:id], :reachable => true, :player_count => players.count, :player_hash => players.to_json.to_s
+        status = GmodServerStatus.create! :gmod_server_id => server[:id], :reachable => true, :player_count => players.count, :player_hash => players.to_json.to_s, :ping => instance.ping
         status.save
         puts server[:name] + " updated successfully"
         result &= true
       rescue Exception => e
-        status = GmodServerStatus.create! :gmod_server_id => server[:id], :reachable => false, :player_count => 0
+        status = GmodServerStatus.create! :gmod_server_id => server[:id], :reachable => false, :player_count => 0, :ping => 0
         status.save
         puts server[:name] + " NOT updated successfully"
         puts e.inspect
