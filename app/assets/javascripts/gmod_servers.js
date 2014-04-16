@@ -29,12 +29,14 @@
               categories: categories
             }],
             yAxis: [{
+              min: 0,
               allowDecimals: false,
               title: {
                 text: 'Players'
               }
             },
             {
+              min: 0,
               allowDecimals: false,
               title: {
                 text: 'Milliseconds'
